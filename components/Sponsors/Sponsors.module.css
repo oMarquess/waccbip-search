@@ -1,0 +1,77 @@
+.carouselContainer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: transparent;
+}
+
+.sponsorsTitle {
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--grey-40);
+    margin-bottom: 1rem;
+}
+
+.carouselTrack {
+    display: flex;
+    width: calc(180px * 12);
+    align-items: center;
+    animation: scroll 25s linear infinite;
+
+    /* Mask image creates the intro/outro fade effect */
+    -webkit-mask-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 1) 15%,
+            rgba(0, 0, 0, 1) 85%,
+            rgba(0, 0, 0, 0) 100%);
+    mask-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 1) 15%,
+            rgba(0, 0, 0, 1) 85%,
+            rgba(0, 0, 0, 0) 100%);
+}
+
+.carouselTrack:hover {
+    animation-play-state: paused;
+}
+
+.logoWrapper {
+    width: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.logo {
+    height: 40px;
+    width: auto;
+    max-width: 140px;
+    object-fit: contain;
+    /* Make them blend well by removing color until hovered */
+    filter: grayscale(100%) opacity(0.6);
+    transition: filter 0.3s ease;
+}
+
+.logo:hover {
+    filter: grayscale(0%) opacity(1);
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        /* 6 logos at 180px each = 1080px */
+        transform: translateX(calc(-180px * 6));
+    }
+}
