@@ -19,7 +19,7 @@ export const metadata = {
     siteName: 'WACCBIP Search',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/ws.svg',
         width: 1200,
         height: 630,
       },
@@ -31,7 +31,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'WACCBIP Search',
     description: 'Search across WACCBIP',
-    images: ['/og-image.jpg'],
+    images: ['/ws.svg'],
   },
 };
 

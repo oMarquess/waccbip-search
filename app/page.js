@@ -1,19 +1,25 @@
 'use client';
-import { useState } from 'react';
-import { Globe, ArrowRight, ScanLine, Search, Bot, Map, Bug } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Globe, ArrowRight, Search, Bot, BookOpen, Dna, Database } from 'lucide-react';
 import styles from './page.module.css';
 import Sponsors from '@/components/Sponsors/Sponsors';
 
 const TABS = [
-  { id: 'scrape', label: 'Scrape', icon: ScanLine },
   { id: 'search', label: 'Search', icon: Search },
-  { id: 'agent', label: 'Agent', icon: Bot },
-  { id: 'map', label: 'Map', icon: Map },
-  { id: 'crawl', label: 'Crawl', icon: Bug },
+  { id: 'assistant', label: 'Agent', icon: Bot },
+  { id: 'literature', label: 'Literature', icon: BookOpen },
+  { id: 'genomes', label: 'Genomes', icon: Dna },
+  { id: 'datasets', label: 'Datasets', icon: Database },
 ];
 
 export default function Home() {
-  const [activeTab, setActiveTab] = useState('crawl');
+  const [activeTab, setActiveTab] = useState('search');
+
+  useEffect(() => {
+    const handleContextMenu = (e) => e.preventDefault();
+    document.addEventListener('contextmenu', handleContextMenu);
+    return () => document.removeEventListener('contextmenu', handleContextMenu);
+  }, []);
 
   return (
     <>
