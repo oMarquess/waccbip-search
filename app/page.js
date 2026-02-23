@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
-import { Globe, ArrowRight, Search, Bot, BookOpen, Dna, Database, Loader2 } from 'lucide-react';
+import { Globe, ArrowRight, Search, Bot, BookOpen, Dna, Database, Loader2, ChevronDown } from 'lucide-react';
 import { toast } from 'sonner';
 import styles from './page.module.css';
 import Sponsors from '@/components/Sponsors/Sponsors';
@@ -17,6 +17,10 @@ export default function Home() {
   const [activeTab, setActiveTab] = useState('search');
   const [searchQuery, setSearchQuery] = useState('');
   const [isSearching, setIsSearching] = useState(false);
+  const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false);
+
+  const activeTabConfig = TABS.find(t => t.id === activeTab);
+  const ActiveIcon = activeTabConfig.icon;
 
   const handleSearch = () => {
     if (!searchQuery.trim()) return;
@@ -65,21 +69,34 @@ export default function Home() {
           </div>
 
           <div className={styles.bottomSection}>
-            <div className={styles.tabsContainer}>
-              {TABS.map((tab) => {
-                const Icon = tab.icon;
-                const isActive = activeTab === tab.id;
-                return (
-                  <button
-                    key={tab.id}
-                    onClick={() => setActiveTab(tab.id)}
-                    className={`${styles.tabButton} ${isActive ? styles.activeTab : ''}`}
-                  >
-                    <Icon className={`${styles.tabIcon} ${isActive ? styles.activeTabIcon : ''}`} />
-                    {tab.label}
-                  </button>
-                );
-              })}
+            <div className={`${styles.tabsContainer} ${isMobileDropdownOpen ? styles.mobileDropdownOpen : ''}`}>
+              <div
+                className={styles.mobileActiveTabDisplay}
+                onClick={() => setIsMobileDropdownOpen(!isMobileDropdownOpen)}
+              >
+                <ActiveIcon className={`${styles.tabIcon} ${styles.activeTabIcon}`} />
+                {activeTabConfig.label}
+                <ChevronDown className={styles.chevronIcon} />
+              </div>
+              <div className={styles.tabsList}>
+                {TABS.map((tab) => {
+                  const Icon = tab.icon;
+                  const isActive = activeTab === tab.id;
+                  return (
+                    <button
+                      key={tab.id}
+                      onClick={() => {
+                        setActiveTab(tab.id);
+                        setIsMobileDropdownOpen(false);
+                      }}
+                      className={`${styles.tabButton} ${isActive ? styles.activeTab : ''}`}
+                    >
+                      <Icon className={`${styles.tabIcon} ${isActive ? styles.activeTabIcon : ''}`} />
+                      {tab.label}
+                    </button>
+                  );
+                })}
+              </div>
             </div>
             <button
               className={styles.submitButton}
