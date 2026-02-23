@@ -12,7 +12,7 @@ export default function Home() {
           times, without compromising your ability to use that data.
         </p>
         <p>
-          This Starter Kit is a Next.js app with Evervault installed. Each page
+          WACCBIP Search is a Next.js app with Evervault installed. Each page
           includes a sandbox of each Evervault product to help you get up to
           speed with the platform. During the integration, we created some
           Evervault products for you to use, and injected them into this project

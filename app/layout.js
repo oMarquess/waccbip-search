@@ -10,13 +10,13 @@ const robotoMono = Roboto_Mono({
 });
 
 export const metadata = {
-  title: 'Evervault Starter Kit',
-  description: 'Get up to speed with Evervault',
+  title: 'WACCBIP Search',
+  description: 'Search across WACCBIP',
   openGraph: {
-    title: 'Evervault Starter Kit',
-    description: 'Get up to speed with Evervault',
-    url: 'https://evervault-starter-kit.vercel.app',
-    siteName: 'Evervault Starter Kit',
+    title: 'WACCBIP Search',
+    description: 'Search across WACCBIP',
+    url: 'https://waccbip-search.vercel.app',
+    siteName: 'WACCBIP Search',
     images: [
       {
         url: '/og-image.jpg',
@@ -29,8 +29,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Evervault Starter Kit',
-    description: 'Get up to speed with Evervault',
+    title: 'WACCBIP Search',
+    description: 'Search across WACCBIP',
     images: ['/og-image.jpg'],
   },
 };
