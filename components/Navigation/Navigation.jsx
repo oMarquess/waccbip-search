@@ -23,10 +23,10 @@ export default function Navigation() {
       <Link href='/'>
         <div className={styles.logoContainer}>
           <Image
-            src='/logo.svg'
-            width={40}
-            height={40}
-            alt='Purple Evervault logo'
+            src='/ws.svg'
+            width={73}
+            height={38}
+            alt='WACCBIP Search logo'
           />
           <Image
             src='/waccbip-search-banner.svg'
