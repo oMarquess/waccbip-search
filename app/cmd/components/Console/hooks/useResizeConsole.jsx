@@ -10,21 +10,21 @@ export default function useResizeConsole() {
     setIsResizing(true);
   }
 
-  function resize(event) {
-    if (!isResizing) return;
-    const resizeHandleOffset = 8;
-    const newHeight = Math.min(
-      Math.max(window.innerHeight - event.clientY + resizeHandleOffset, 40),
-      window.innerHeight
-    );
-    setHeight(newHeight);
-  }
-
-  function stopResizing() {
-    setIsResizing(false);
-  }
-
   useEffect(() => {
+    function resize(event) {
+      if (!isResizing) return;
+      const resizeHandleOffset = 8;
+      const newHeight = Math.min(
+        Math.max(window.innerHeight - event.clientY + resizeHandleOffset, 40),
+        window.innerHeight
+      );
+      setHeight(newHeight);
+    }
+
+    function stopResizing() {
+      setIsResizing(false);
+    }
+
     document.addEventListener('mousemove', resize);
     document.addEventListener('mouseup', stopResizing);
 
