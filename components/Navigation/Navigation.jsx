@@ -29,10 +29,10 @@ export default function Navigation() {
             alt='Purple Evervault logo'
           />
           <Image
-            src='/starter-kit-banner.svg'
+            src='/waccbip-search-banner.svg'
             width={108}
             height={108}
-            alt='Banner that says Starter Kit drawn on a circular path around the Evervault logo'
+            alt='Banner that says WACCBIP SEARCH drawn on a circular path around the logo'
             className={styles.starterKitBanner}
           />
         </div>
