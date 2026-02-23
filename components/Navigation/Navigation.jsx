@@ -44,14 +44,16 @@ export default function Navigation() {
               className={styles.navigationItem}
               initial={false}
               animate={{
-                color: pathname === path ? 'var(--grey-00)' : 'var(--grey-90)',
+                color: pathname === path
+                  ? 'var(--grey-00)'
+                  : title === 'cmd' ? '#b79c05' : 'var(--grey-90)',
               }}
             >
               {pathname === path && (
                 <motion.div
                   className={styles.indicator}
                   layoutId='indicator'
-                  style={{ borderRadius: 32 }}
+                  style={{ borderRadius: 32, backgroundColor: title === 'cmd' ? '#b79c05' : 'var(--primary)' }}
                 />
               )}
               {title}

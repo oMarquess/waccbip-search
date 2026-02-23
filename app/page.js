@@ -14,6 +14,7 @@ const TABS = [
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState('search');
+  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
     const handleContextMenu = (e) => e.preventDefault();
@@ -38,6 +39,8 @@ export default function Home() {
               type="text"
               placeholder="Search for genes, proteins, pathogens, or publications..."
               className={styles.complexInput}
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
             />
           </div>
 
@@ -58,7 +61,14 @@ export default function Home() {
                 );
               })}
             </div>
-            <button className={styles.submitButton}>
+            <button
+              className={styles.submitButton}
+              disabled={!searchQuery.trim()}
+              style={{
+                opacity: searchQuery.trim() ? 1 : 0.5,
+                cursor: searchQuery.trim() ? 'pointer' : 'not-allowed'
+              }}
+            >
               <ArrowRight strokeWidth={2.5} width={20} height={20} />
             </button>
           </div>
