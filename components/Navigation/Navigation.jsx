@@ -8,10 +8,10 @@ import Button from '../Button/Button';
 
 const pages = [
   { title: 'Home', path: '/' },
-  { title: 'SDKs', path: '/sdks' },
-  { title: 'Inbound Relay', path: '/inbound-relay' },
-  { title: 'Outbound Relay', path: '/outbound-relay' },
-  { title: 'Functions', path: '/functions' },
+  { title: 'Pathogens', path: '/pathogens' },
+  { title: 'Host Genes', path: '/host-genes' },
+  { title: 'Literature', path: '/literature' },
+  { title: 'Datasets', path: '/datasets' },
   { title: 'Inputs', path: '/inputs' },
 ];
 
