@@ -41,7 +41,7 @@ export default function Home() {
   return (
     <>
       <main className={styles.main}>
-        <h1 className={styles.heroTitle}>Explore Bioinformatics & Parasite Data</h1>
+        <h1 className={styles.heroTitle}>Discover Parasite Data</h1>
         <p className={styles.heroSubtitle}>
           The comprehensive repository for{' '}
           <span className={styles.waccbipHighlight}>WACCBIP</span> research.
