@@ -30,6 +30,11 @@
   line-height: 1.6;
 }
 
+.waccbipHighlight {
+  color: #b79c05;
+  font-weight: 600;
+}
+
 .searchCard {
   width: 100%;
   max-width: 700px;
