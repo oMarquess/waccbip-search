@@ -105,3 +105,28 @@
     display: none;
   }
 }
+
+.terminalInputForm {
+  display: flex;
+  align-items: center;
+  margin-top: var(--token-16);
+  padding-left: var(--token-24);
+  position: relative;
+}
+
+.prompt {
+  color: var(--grey-40);
+  font-family: var(--font-roboto-mono);
+  font-size: var(--font-size-regular);
+  margin-right: var(--token-08);
+}
+
+.terminalInput {
+  background: transparent;
+  border: none;
+  color: var(--grey-20);
+  font-family: var(--font-roboto-mono);
+  font-size: var(--font-size-regular);
+  flex-grow: 1;
+  outline: none;
+}
