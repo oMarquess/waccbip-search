@@ -1,8 +1,10 @@
 'use client';
+import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { usePathname } from 'next/navigation';
+import { Menu, X } from 'lucide-react';
 import styles from './Navigation.module.css';
 import Button from '../Button/Button';
 
@@ -17,6 +19,7 @@ const pages = [
 
 export default function Navigation() {
   const pathname = usePathname();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <div className={styles.container}>
@@ -37,9 +40,18 @@ export default function Navigation() {
           />
         </div>
       </Link>
-      <nav className={styles.navigation}>
+
+      <button
+        className={styles.hamburgerButton}
+        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        aria-label="Toggle mobile menu"
+      >
+        {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+      </button>
+
+      <nav className={`${styles.navigation} ${mobileMenuOpen ? styles.mobileOpen : ''}`}>
         {pages.map(({ title, path }) => (
-          <Link href={path} key={path} tabIndex={-1}>
+          <Link href={path} key={path} tabIndex={-1} onClick={() => setMobileMenuOpen(false)}>
             <motion.button
               className={styles.navigationItem}
               initial={false}

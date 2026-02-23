@@ -189,6 +189,9 @@
     max-width: calc(100vw - 6rem);
     scrollbar-width: none;
     /* Firefox */
+    display: flex;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
   }
 
   .tabsContainer::-webkit-scrollbar {
@@ -200,5 +203,6 @@
     padding: 0.4rem 0.8rem;
     font-size: 0.85rem;
     white-space: nowrap;
+    flex-shrink: 0;
   }
 }
