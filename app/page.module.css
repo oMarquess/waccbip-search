@@ -188,10 +188,18 @@
     max-width: 100%;
     margin: 0 1rem;
     border-radius: 1rem;
+    overflow: visible;
   }
 
   .topSection {
     padding: 1rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+  }
+
+  .bottomSection {
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
   }
 
   .complexInput {
@@ -234,7 +242,7 @@
     display: none;
     flex-direction: column;
     position: absolute;
-    bottom: calc(100% + 5px);
+    top: calc(100% + 8px);
     left: 0;
     background: #ffffff;
     border: 1px solid var(--grey-20);
