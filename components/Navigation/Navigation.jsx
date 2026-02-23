@@ -24,8 +24,8 @@ export default function Navigation() {
         <div className={styles.logoContainer}>
           <Image
             src='/ws.svg'
-            width={73}
-            height={38}
+            width={40}
+            height={21}
             alt='WACCBIP Search logo'
           />
           <Image
