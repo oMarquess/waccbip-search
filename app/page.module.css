@@ -15,7 +15,7 @@
   font-weight: 800;
   letter-spacing: -0.02em;
   margin-bottom: var(--token-16);
-  background: linear-gradient(135deg, var(--grey-90), var(--primary));
+  background: linear-gradient(135deg, #2e3192, #b79c05);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -117,12 +117,11 @@
 }
 
 .activeTabIcon {
-  color: #ff5500;
-  /* Beautiful orange */
+  color: #b79c05;
 }
 
 .submitButton {
-  background: #ff4500;
+  background: #b79c05;
   color: white;
   border: none;
   border-radius: 12px;
@@ -135,7 +134,7 @@
 }
 
 .submitButton:hover {
-  background: #e63e00;
+  background: #a08804;
 }
 
 .submitButton:active {
