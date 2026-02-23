@@ -3,10 +3,10 @@ import styles from './Sponsors.module.css';
 const logos = [
     '/sponsors/CDC-Logo.png',
     '/sponsors/Ug.png',
-    '/sponsors/billngates.png',
+    '/sponsors/bill2.jpg',
     '/sponsors/ncbi.png',
-    '/sponsors/nih-2.jpg',
-    '/sponsors/who-logo.jpg',
+    '/sponsors/nih2-pro.jpg',
+    '/sponsors/who2.png',
 ];
 
 export default function Sponsors() {
@@ -14,7 +14,7 @@ export default function Sponsors() {
         <div className={styles.carouselContainer}>
             <p className={styles.sponsorsTitle}>Supported by</p>
             <div className={styles.carouselTrack}>
-                {[...logos, ...logos].map((logo, index) => (
+                {[...logos, ...logos, ...logos, ...logos].map((logo, index) => (
                     <div className={styles.logoWrapper} key={index}>
                         {/* Using standard img tag for simplicity within a carousel */}
                         <img src={logo} alt={`Sponsor ${index}`} className={styles.logo} />

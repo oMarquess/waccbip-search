@@ -22,7 +22,7 @@
 
 .carouselTrack {
     display: flex;
-    width: calc(180px * 12);
+    width: max-content;
     align-items: center;
     animation: scroll 25s linear infinite;
 
