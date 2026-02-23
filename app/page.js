@@ -18,8 +18,9 @@ export default function Home() {
     <main className={styles.main}>
       <h1 className={styles.heroTitle}>Explore Bioinformatics & Parasite Data</h1>
       <p className={styles.heroSubtitle}>
-        The comprehensive repository for WACCBIP research. Search across pathogens,
-        host genes, literature, and datasets instantly.
+        The comprehensive repository for{' '}
+        <span className={styles.waccbipHighlight}>WACCBIP</span> research.
+        Search across pathogens, host genes, literature, and datasets instantly.
       </p>
 
       <div className={styles.searchCard}>
