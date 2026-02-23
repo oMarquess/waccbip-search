@@ -2,6 +2,7 @@ import './globals.css';
 import { Inter, Roboto_Mono } from 'next/font/google';
 
 import Navigation from '@/components/Navigation/Navigation';
+import { Toaster } from 'sonner';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const robotoMono = Roboto_Mono({
@@ -42,6 +43,7 @@ export default function RootLayout({ children }) {
         className={`${inter.variable} font-sans; ${robotoMono.variable} font-monospace;`}
       >
         <Navigation />
+        <Toaster richColors position="top-center" />
         <div className='rootLayout'>{children}</div>
       </body>
     </html>

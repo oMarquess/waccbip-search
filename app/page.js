@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
-import { Globe, ArrowRight, Search, Bot, BookOpen, Dna, Database } from 'lucide-react';
+import { Globe, ArrowRight, Search, Bot, BookOpen, Dna, Database, Loader2 } from 'lucide-react';
+import { toast } from 'sonner';
 import styles from './page.module.css';
 import Sponsors from '@/components/Sponsors/Sponsors';
 
@@ -15,6 +16,21 @@ const TABS = [
 export default function Home() {
   const [activeTab, setActiveTab] = useState('search');
   const [searchQuery, setSearchQuery] = useState('');
+  const [isSearching, setIsSearching] = useState(false);
+
+  const handleSearch = () => {
+    if (!searchQuery.trim()) return;
+
+    setIsSearching(true);
+
+    // Simulate a backend search processing time
+    setTimeout(() => {
+      setIsSearching(false);
+      toast.success('Query submitted successfully!', {
+        description: `We've begun searching for "${searchQuery}" in our bioinformatics databases.`,
+      });
+    }, 1500);
+  };
 
   useEffect(() => {
     const handleContextMenu = (e) => e.preventDefault();
@@ -41,6 +57,8 @@ export default function Home() {
               className={styles.complexInput}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
+              onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
+              disabled={isSearching}
             />
           </div>
 
@@ -63,13 +81,18 @@ export default function Home() {
             </div>
             <button
               className={styles.submitButton}
-              disabled={!searchQuery.trim()}
+              disabled={!searchQuery.trim() || isSearching}
+              onClick={handleSearch}
               style={{
                 opacity: searchQuery.trim() ? 1 : 0.5,
-                cursor: searchQuery.trim() ? 'pointer' : 'not-allowed'
+                cursor: searchQuery.trim() && !isSearching ? 'pointer' : 'not-allowed'
               }}
             >
-              <ArrowRight strokeWidth={2.5} width={20} height={20} />
+              {isSearching ? (
+                <Loader2 className={styles.spinningIcon} strokeWidth={2.5} width={20} height={20} />
+              ) : (
+                <ArrowRight strokeWidth={2.5} width={20} height={20} />
+              )}
             </button>
           </div>
         </div>
