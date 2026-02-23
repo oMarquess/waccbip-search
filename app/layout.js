@@ -43,7 +43,16 @@ export default function RootLayout({ children }) {
         className={`${inter.variable} font-sans; ${robotoMono.variable} font-monospace;`}
       >
         <Navigation />
-        <Toaster richColors position="top-center" />
+        <Toaster
+          position="top-center"
+          toastOptions={{
+            style: {
+              background: 'white',
+              color: 'black',
+              border: '1px solid #e2e8f0'
+            },
+          }}
+        />
         <div className='rootLayout'>{children}</div>
       </body>
     </html>
