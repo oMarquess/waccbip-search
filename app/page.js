@@ -44,8 +44,10 @@ export default function Home() {
         <h1 className={styles.heroTitle}>Discover Parasite Data</h1>
         <p className={styles.heroSubtitle}>
           The comprehensive repository for{' '}
-          <span className={styles.waccbipHighlight}>WACCBIP</span> research.
-          Search across pathogens, host genes, literature, and datasets instantly.
+          <a href="https://www.waccbip.org/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+            <span className={styles.waccbipHighlight}>WACCBIP</span>
+          </a>{' '}
+          research. Search across pathogens, host genes, literature, and datasets instantly.
         </p>
 
         <div className={styles.searchCard}>
