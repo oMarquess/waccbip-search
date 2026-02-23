@@ -12,7 +12,7 @@ const pages = [
   { title: 'Host Genes', path: '/host-genes' },
   { title: 'Literature', path: '/literature' },
   { title: 'Datasets', path: '/datasets' },
-  { title: 'Inputs', path: '/inputs' },
+  { title: 'cmd', path: '/cmd' },
 ];
 
 export default function Navigation() {
@@ -60,11 +60,11 @@ export default function Navigation() {
         ))}
       </nav>
       <Link
-        href='https://app.evervault.com'
+        href='#'
         target='_blank'
         className={styles.dashboard}
       >
-        <Button>Dashboard</Button>
+        <Button>Group III</Button>
       </Link>
     </div>
   );

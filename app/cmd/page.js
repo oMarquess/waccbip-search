@@ -49,35 +49,14 @@ export default function Inputs() {
 
   return (
     <main className={styles.main}>
-      <Header
-        links={[
-          {
-            title: 'Docs',
-            href: 'https://docs.evervault.com/products/inputs',
-          },
-          {
-            title: 'View Source',
-            href: sourceUrls.inputs,
-          },
-        ]}
-      >
-        Inputs
-      </Header>
+      <Header links={[]}>cmd</Header>
       <div className={styles.content}>
         <div>
           <p>
-            Inputs is an <code>iframe</code> form that lets you encrypt
-            cardholder data before it touches your browser. This means that
-            neither your client nor your server touch the cardholder data in
-            plaintext, which significantly reduces your PCI Compliance scope.
-            Inputs can be{' '}
-            <a
-              href='https://docs.evervault.com/products/inputs#themes'
-              target='_blank'
-            >
-              customized
-            </a>{' '}
-            to match your your existing styling.
+            For technical researchers and developers who prefer a command-line
+            interface, feel free to use the interactive terminal below to
+            securely submit queries, test payloads, or interact directly with
+            our backend services.
           </p>
           <EvervaultProvider
             teamId={process.env.NEXT_PUBLIC_TEAM_ID}
