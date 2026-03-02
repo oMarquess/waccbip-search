@@ -59,7 +59,7 @@ export default function Home() {
             <Globe className={styles.globeIcon} />
             <input
               type="text"
-              placeholder="Search for genes, proteins, pathogens, or publications..."
+              placeholder="Search for parasitic genes, proteins, pathogens, or publications..."
               className={styles.complexInput}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
